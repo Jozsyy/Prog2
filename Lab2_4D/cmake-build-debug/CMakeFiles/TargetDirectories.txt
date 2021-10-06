@@ -1,0 +1,3 @@
+C:/University/Clion_feladatok/Prog2/Lab2_4D/cmake-build-debug/CMakeFiles/Lab2_4D.dir
+C:/University/Clion_feladatok/Prog2/Lab2_4D/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/University/Clion_feladatok/Prog2/Lab2_4D/cmake-build-debug/CMakeFiles/rebuild_cache.dir
