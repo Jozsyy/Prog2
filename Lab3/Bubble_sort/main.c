@@ -46,8 +46,9 @@ void bubblesort2(int *a,int n){
     int last=n-1;
     while(last>0){
         last=bubble2(a,last);
-        printf("%i\t",last);
+       //printf("%i\t",last);
     }
+    printf("\n");
 }
 
 int bubble2(int *a,int n){
