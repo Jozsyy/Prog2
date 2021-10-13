@@ -44,5 +44,6 @@ int main() {
     print_digit_number(a[0]);
     printf("\nA szam szamjegyeinek szama:%i", number_digit_number(a[0]));
     printf("\nA szam paros szamjegyei kitorolve:%i", delete_digit_number(a[0]));
+    printf("\nA szam paros szamjegyei utan 9-es beszurasa:%i", insert_digit_number(a[0]));
     return 0;
 }

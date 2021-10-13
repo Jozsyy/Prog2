@@ -101,3 +101,17 @@ int delete_digit_number(int n){
         return 0;
     }
 }
+
+int insert_digit_number(int n){
+    if(n>0){
+        if(n%2==0){
+            return 100*insert_digit_number(n/10)+(n%10)*10+9;
+        }
+        else{
+            return 10*insert_digit_number(n/10)+n%10;
+        }
+    }
+    else{
+        return 0;
+    }
+}
