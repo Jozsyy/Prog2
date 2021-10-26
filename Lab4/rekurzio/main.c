@@ -45,5 +45,29 @@ int main() {
     printf("\nA szam szamjegyeinek szama:%i", number_digit_number(a[0]));
     printf("\nA szam paros szamjegyei kitorolve:%i", delete_digit_number(a[0]));
     printf("\nA szam paros szamjegyei utan 9-es beszurasa:%i", insert_digit_number(a[0]));
+    printf("\nEgy szam hatvanya: %i", power2(2,10));
+
+
+    ///Labor 5
+
+    printf("\nMax szam:%i", *maxkereses(a,n));  ///maxkereses->visszateriti a cimet; *maxkereses->szamot
+    printf("\nMax2:%i", max_kereses(a,n-1));
+    if(binariskereses(a,0,n-1,150)!=-1) {
+        printf("\nA keresett szam indexe:%i", binariskereses(a, 0, n - 1, 150));
+    }
+    else{
+        printf("\nA keresett szam nincsa tombben!");
+    }
+
+    int szam=5;
+    if(letezik_e(a,n,5)){
+        printf("\nA szamsorozatba letezik az megadott %i szam",szam);
+    }
+    else{
+        printf("\nA szamsorozatba nem letezik a megadott %i szam",szam);
+    }
+    printf("\n%i a kobon:%i",szam, hatvanyozas_1(szam,3));
+    printf("\n%i a 4-en:%i",szam, hatvanyozas_2(szam,4));
+    printf("\nLnko 15,25: %i", lnko(50,30));
     return 0;
 }
