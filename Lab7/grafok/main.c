@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include "graph.h"
 
 int main() {
-    FILE
+    u_adjacency_matrix("input.txt");
     return 0;
 }
