@@ -61,32 +61,133 @@ void d_adjacency_matrix(const char* name){
     }
 }
 
-
-Node* createNode() {
-    Node* newNode = (Node*)calloc(1, sizeof(Node));
-
-    if(!newNode) {
-        printf("Error while allocating newNode!");
-        return NULL;
-    }
-
-    newNode->next = NULL;
-    return newNode;
-}
-
-void adjacency_list(Node* , const char *name){
-    FILE *f=fopen(name,"rt");
+///Iranyitatlan szomszedsagi lista
+void u_adjacency_list(const char *fileName){
+    FILE *f=fopen(fileName,"rt");
     if(!f){
-        printf("Cannot open %s",name);
+        printf("Cannot open %s",fileName);
         return;
     }
-    int n,m;
-    Node* list;
-    scanf("%i%i",&n,&m);
-    list=(Node*)malloc(n*sizeof(Node));
-    for(int i=0;i<n;++i) {
-        list[i]=createNode();
+    int n,m,**a;
+    fscanf(f,"%i%i",&n,&m);
+    a=(int**)calloc(n+1,sizeof(int*));
+    for(int i=0;i<=n;++i){
+        a[i]=(int*)calloc(n+1,sizeof(int));
+    }
 
+    int el1,el2;
+    for(int i=0;i<m;++i){
+        fscanf(f,"%i%i",&el1,&el2);
+        int j=1,k=1;
+        while(a[el1][j]!=0){
+            ++j;
+        }
+        while(a[el2][k]!=0){
+            ++k;
+        }
+        a[el1][j]=el2;
+        a[el2][k]=el1;
+    }
+    fclose(f);
+
+    for(int i=1;i<=n;++i){
+        printf("%i ",i);
+        for(int j=1;j<=n && a[i][j]!=0;++j){
+            printf("%i ",a[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void d_adjacency_list(const char *fileName){
+    FILE *f=fopen(fileName,"rt");
+    if(!f){
+        printf("Cannot open %s",fileName);
+        return;
+    }
+    int n,m,**a;
+    fscanf(f,"%i%i",&n,&m);
+    a=(int**)calloc(n+1,sizeof(int*));
+    for(int i=0;i<=n;++i){
+        a[i]=(int*)calloc(n+1,sizeof(int));
+    }
+
+    int el1,el2;
+    for(int i=0;i<m;++i){
+        fscanf(f,"%i%i",&el1,&el2);
+        int j=1;
+        while(a[el1][j]!=0){
+            ++j;
+        }
+        a[el1][j]=el2;
+    }
+    fclose(f);
+
+    for(int i=1;i<=n;++i){
+        printf("%i ",i);
+        for(int j=1;j<=n && a[i][j]!=0;++j){
+            printf("%i ",a[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+///Illeszkedesi matrix
+void u_incidence_matrix(const char *fileName){
+    FILE *f=fopen(fileName,"rt");
+    if(!f){
+        printf("Cannot open %s",fileName);
+        return;
+    }
+    int n,m,**a;
+    fscanf(f,"%i%i",&n,&m);
+    a=(int**)calloc(n+1,sizeof(int*));
+    for(int i=0;i<=n;++i){
+        a[i]=(int*)calloc(m+1,sizeof(int));
+    }
+
+    int el1,el2;
+    int c=1;
+    for(int i=0;i<m;++i){
+        fscanf(f,"%i%i",&el1,&el2);
+        a[el1][c]=1;
+        a[el2][c]=1;
+        ++c;
+    }
+    fclose(f);
+
+    for(int i=1;i<=n;++i){
+        for(int j=1;j<=n;++j){
+            printf("%i ",a[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+///Ellista
+void u_el_list(const char *fileName){
+    FILE *f=fopen(fileName,"rt");
+    if(!f){
+        printf("Cannot open %s",fileName);
+        return;
+    }
+    int n,m,**a;
+    fscanf(f,"%i%i",&n,&m);
+    a=(int**)calloc(m+1,sizeof(int*));
+    for(int i=0;i<=m;++i){
+        a[i]=(int*)calloc(3,sizeof(int));
+    }
+
+    int el1,el2;
+    for(int i=1;i<=m;++i){
+        fscanf(f,"%i%i",&el1,&el2);
+        a[i][1]=el1;
+        a[i][2]=el2;
+    }
+    fclose(f);
+
+    for(int i=1;i<=m;++i){
+        printf("%i %i %i\n",i,a[i][1],a[i][2]);
     }
 }
 

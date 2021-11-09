@@ -12,16 +12,15 @@ void u_adjacency_matrix(const char*);  //u=undirected
 ///Iranyitott szomszedsagi matrix (sulyozott)
 void d_adjacency_matrix(const char*);  //d=directed
 
+///Iranyitatlan szomszedsagi lista
+void u_adjacency_list(const char*);
+///Iranyitott szomszedsagi lista
+void d_adjacency_list(const char*);
 
-typedef struct {
-    int data;
-    struct Node* next;
-} Node;
+///Illeszkedesi matrix
+void u_incidence_matrix(const char*);
 
-Node* createNode();
-void insert(Node** front, char *nev, int data);
-void print_list(Node *myNode);
-
-void adjacency_list(Node* , const char*);
+///Ellista
+void u_el_list(const char*);
 
 #endif //GRAFOK_GRAPH_H
