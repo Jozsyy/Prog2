@@ -4,11 +4,10 @@ int main() {
     init(&n,&m);
     bool_matrix(m);
     print_bool(adj_m,n);
-    print_dad(n);
-    print_color(n);
     melysegi_bejaras();
-    print_dad(n);
-    print_color(n);
-
+    printf("\nApa tomb:\n");
+    print_array(dad,n);
+    printf("\nSzin tomb:\n");
+    print_array(color,n);
     return 0;
 }

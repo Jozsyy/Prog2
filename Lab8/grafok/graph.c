@@ -34,34 +34,27 @@ void print_bool(int **adj_m,int n){
     }
 }
 
-void print_dad(int n){
-    printf("\nApa tomb:\n");
+void print_array(int *a,int n){
     for(int i=1;i<=n;++i){
-        printf("%i ",dad[i]);
-    }
-    printf("\n");
-}
-
-void print_color(int n){
-    printf("\nSzin tomb:\n");
-    for(int i=1;i<=n;++i){
-        printf("%i ",color[i]);
+        printf("%i ",a[i]);
     }
     printf("\n");
 }
 
 void melysegi_bejaras(){
-    //print_array(szin,n);
-    //printf("\n");
-    printf("Melysegi bejaras:");
-    //int k=0;
+    printf("\nApa tomb:\n");
+    print_array(dad,n);
+    printf("\nSzin tomb:\n");
+    print_array(color,n);
+    printf("\nMelysegi bejaras:");
+    int k=0;
     for(int i=1;i<=n;++i) {
         if (color[i] == 0) {
-            //++k;
+            ++k;
             melysegi_menet(i);
         }
     }
-    //printf("Az osszefuggo komponensek szama: %i",k);
+    printf("\nAz osszefuggo komponensek szama: %i\n",k);
 }
 
 void melysegi_menet(int i){

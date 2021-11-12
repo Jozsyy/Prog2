@@ -11,8 +11,7 @@ int n,m,*dad,**adj_m,*color;
 void init(int *, int *);
 void bool_matrix( int );
 void print_bool(int**, int);
-void print_dad(int);
-void print_color(int);
+void print_array(int*,int);
 void melysegi_menet(int);
 void melysegi_bejaras();
 
