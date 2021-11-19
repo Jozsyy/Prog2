@@ -3,6 +3,8 @@
 #include <string.h>
 
 void dfs(int**, int*, int*, char*, char*, char*, int, int);
+void bfs(int**, int*, int*, char*, char*, char*, int, int, int*,int, int);
+
 
 int main() {
     FILE *f=fopen("bemenet.txt","r");
@@ -10,7 +12,7 @@ int main() {
         printf("Cannot open the input file!");
         return 0;
     }
-    int n,m,**adjM,*color,*dist,x;
+    int n,m,**adjM,*color,*dist,x,*q;
     char *s,*test,*dists;
     fscanf(f,"%i%i\n",&n,&m);
 
@@ -21,9 +23,11 @@ int main() {
     }
     color=(int*)calloc(n+1,sizeof(int));
     dist=(int*)calloc(n+1,sizeof(int));
+    q=(int*)calloc(n+1,sizeof(int));
     s=(char*)malloc((n+1)*sizeof(char));
     test=(char*)malloc((n+1)*sizeof(char));
     dists=(char*)calloc((n+1),sizeof(char));
+
 
     //beolvasasok
     char aux;//szokozoket ide olvassuk
@@ -41,6 +45,8 @@ int main() {
     fscanf(f,"%i",&x);
     dist[0]=x;
     dists[0]=s[x];
+    color[0]=1;
+    q[0]=x;
     fclose(f);
 
     for(int i=1;i<=n;++i){
@@ -51,6 +57,8 @@ int main() {
     }
 
     dfs(adjM,color, dist,s,test, dists,n,x);
+    printf("\n\n");
+    bfs(adjM,color,dist,s,test,dists,n,x,q,0,0);
     return 0;
 }
 
@@ -73,4 +81,21 @@ void dfs(int **adjM, int *color, int *dist, char *s, char *test, char* dists, in
         }
     }
     color[x]=2;
+}
+
+void bfs(int **adjM, int *color, int *dist, char *s, char *test, char *dists, int n, int x,int *q,int e, int v){   //e=a sor eleje, v=a sor vege, mi esetunkbe a sor q
+    while(e<=v){
+        int i=q[e];
+        printf("%i->",i);
+        for(int j=1;j<=n;++j){
+            if(adjM[i][j]==1 && color[j]==0){
+                ++v;
+                q[v]=j;
+                dist[i]=1;
+                color[j]=1;
+            }
+            ++e;
+            color[i]=2;
+        }
+    }
 }
