@@ -1,0 +1,35 @@
+BFS
+   q[0] = s; color[s] = SZURKE; dist[s] = 0;
+    e = v = 0;
+    int paros = 1;
+
+
+    printf("BFS sorrend: ");
+    while( e <= v ){
+        int x = q[e];
+        printf("%i ", x);
+        for( j = 1 ; j <= n ; ++j ){
+            if( adjM[x][j] == 1 && color[j] == FEHER ){
+                ++v; q[v] = j;
+                dist[j] = dist[x] + 1;
+                color[j] = SZURKE;
+            }
+        }
+        ++e;
+        color[x] = FEKETE;
+    }
+
+
+DFS
+void DFS(int i){
+    int j;
+    color[i]=1;
+    printf("%i->",i);
+    for(j=1;j<=n;++j){
+        if(adj_m[i][j]==1 && color[j]==0){
+            dad[j]=i;
+            DFS(j);
+        }
+    }
+    color[i]=2;
+}
