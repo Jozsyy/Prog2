@@ -110,6 +110,7 @@ void dfs(int **adjM, int *color, int *dist, char *s, char *test, char* dists, in
 }
 
 void bfs(int **adjM, int *color, int *dist, char *s, char *test, char *dists, int n, int x,int *q,int e, int v){   //e=a sor eleje, v=a sor vege, mi esetunkbe a sor q
+    int k=0;
     while(e<=v){
         int i=q[e];
         //printf("%i->",i);
@@ -117,8 +118,7 @@ void bfs(int **adjM, int *color, int *dist, char *s, char *test, char *dists, in
             if(adjM[i][j]==1 && color[j]==0){
                 ++v;
                 q[v]=j;
-                int k=0;
-                while(dist[k]!=0){++k;}
+                ++k;
                 dist[k]=j;
                 dists[k]=s[j];
                 if(strlen(dists)>=strlen(test) && strstr(dists,test)!=NULL && strcmp(strstr(dists,test),test)==0){
