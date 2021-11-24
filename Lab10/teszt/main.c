@@ -46,6 +46,8 @@ int main() {
     e1 = el1-ascii + 1;
     e2 = el2-ascii + 1;
 
+    fclose(f);
+
     for(int i=1;i<=n;++i){
         for(int j=1;j<=n;++j){
             printf("%i ",adjM[i][j]);
