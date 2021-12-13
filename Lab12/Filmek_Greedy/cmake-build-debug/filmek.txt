@@ -1,0 +1,27 @@
+13
+A gyuru szovetsege
+10 13
+A ket torony
+13 16
+A kiraly visszater
+16 19
+Forrest Gump
+3 5
+Az elet szep
+4 7
+A remeny rabjai
+6 8
+Poirot – Cipruskoporso
+11 12
+Amelie csodalatos alete
+12 14
+Solaris
+15 17
+Gattaca
+18 20
+A kiserlet
+19 21
+Good bye, Lenin!
+20 22
+Scherlock Holmes - A satan kutyaja
+21 23
