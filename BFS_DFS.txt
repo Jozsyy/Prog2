@@ -1,3 +1,6 @@
+#define FEHER 0
+#define SZURKE 1
+#define FEKETE 2
 BFS
    q[0] = s; color[s] = SZURKE; dist[s] = 0;
     e = v = 0;
