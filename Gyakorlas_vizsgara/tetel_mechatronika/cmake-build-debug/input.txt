@@ -1,0 +1,6 @@
+5
+Peter 20 1 2
+Vera 25 2 5
+Timea 19 2 1
+Laszlo 27 1 4
+Borbala 40 2 3
