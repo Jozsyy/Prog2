@@ -32,6 +32,10 @@ int main() {
     //printf("\nA tavolsag:");
     dfs(adjM,n,color,tav,a,b);
 
+    for(int i=1;i<=n;++i){
+        free(adjM[i]);
+    }
+    free(a);
     return 0;
 }
 
